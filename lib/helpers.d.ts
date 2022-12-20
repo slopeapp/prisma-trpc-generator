@@ -1,0 +1,13 @@
+import { DMMF } from '@prisma/generator-helper';
+import { SourceFile } from 'ts-morph';
+import { Config } from './config';
+export declare const generateCreateRouterImport: (sourceFile: SourceFile, isProtectedMiddleware: boolean) => void;
+export declare const generatetRPCImport: (sourceFile: SourceFile) => void;
+export declare const generateShieldImport: (sourceFile: SourceFile, shieldOutputPath: string) => void;
+export declare const generateRouterImport: (sourceFile: SourceFile, modelNamePlural: string, modelNameCamelCase: string) => void;
+export declare function generateBaseRouter(sourceFile: SourceFile, config: Config): void;
+export declare function generateProcedure(sourceFile: SourceFile, name: string, typeName: string, modelName: string, opType: string, baseOpType: string): void;
+export declare function generateRouterSchemaImports(sourceFile: SourceFile, name: string, hasCreateMany: boolean, provider: string): void;
+export declare const getInputTypeByOpName: (opName: string, modelName: string) => string;
+export declare const getProcedureTypeByOpName: (opName: string) => string;
+export declare function resolveModelsComments(models: DMMF.Model[], hiddenModels: string[]): void;
